@@ -59,6 +59,7 @@ def parse_email():
 if __name__ == "__main__":
     app.run(port=5000)
 
+# -->> For body+subject as input
 
 # from flask import Flask, request, jsonify
 # from flask_cors import CORS

@@ -1,3 +1,24 @@
+const predictUrl = "http://localhost:5000/predict";
+
+// Categorize email using ML service based on subject line
+export async function categorizeEmail(subject: string): Promise<string> {
+  try {
+    const response = await fetch(predictUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ subject }), // Only subject for now
+    });
+
+    const result = await response.json();
+    return result.label || "Uncategorized";
+  } catch (error) {
+    console.error("Categorization error:", error);
+    return "Uncategorized";
+  }
+}
+
+// Uncomment the following code if you want to use the full email body+subject for categorization
+
 // const predictUrl = "http://localhost:5000/predict";
 // const parseUrl = "http://localhost:5000/parse";
 
@@ -29,24 +50,3 @@
 //     return "Uncategorized";
 //   }
 // }
-
-// src/utils/aiService.ts
-
-const predictUrl = "http://localhost:5000/predict";
-
-// Categorize email using ML service based on subject line
-export async function categorizeEmail(subject: string): Promise<string> {
-  try {
-    const response = await fetch(predictUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ subject }), // Only subject for now
-    });
-
-    const result = await response.json();
-    return result.label || "Uncategorized";
-  } catch (error) {
-    console.error("Categorization error:", error);
-    return "Uncategorized";
-  }
-}

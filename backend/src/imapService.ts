@@ -68,6 +68,7 @@ export class ImapService {
           if (msg && msg.envelope && msg.source && msg.envelope.date) {
             const subject = msg.envelope.subject || "No Subject";
             const category = await categorizeEmail(subject);
+            // Uncomment the line below if you want to body+subject categorization
             // const category = await categorizeEmail(
             //   subject,
             //   msg.source.toString()

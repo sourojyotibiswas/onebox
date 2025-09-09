@@ -2,9 +2,6 @@
 
 Onebox is a full-stack intelligent email aggregator that connects multiple Gmail accounts, categorizes emails using AI (BART transformer), indexes data in Elasticsearch for fast search, and sends smart Slack/webhook alerts for high-priority messages — all within a sleek React UI.
 
-## Demo Video ⚠️⚠️⚠️
-
-[Download from Google Drive](https://drive.google.com/file/d/1Ujgqj1-hQlISDkZfYy06hrF66xM-1utO/view?usp=sharing)
 
 ## Table of Contents
 
